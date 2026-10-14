@@ -11,6 +11,7 @@ try:
 except ValueError as e:
         print("sorry, but you need to input an integer")
         print("please try again")
+        print(e)
         number = None
 
-print(f"You entered number {number}")
+print(f"You entered number: {number}")
