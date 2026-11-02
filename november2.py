@@ -45,3 +45,25 @@ maria = queue.index("Мария") + 1
 print("Обслужен:", served)
 print("Итоговая очередь:", queue)
 print("Место Марии:", maria)
+
+# 3. Фильтр правильных имён
+# names = ["Анна", "иван", "123", "", "Олег!", "  Мария  ", "Ян"]
+# Напиши функцию valid_names(names), которая очищает пробелы и оставляет только имена, состоящие из букв и содержащие не менее трёх символов. Приведи имена к виду "Анна".
+
+# Ожидаемый результат:
+# ["Анна", "Иван", "Мария"]
+# Используй strip(), isalpha(), len(), map() и filter().
+
+names = ["Анна", "иван", "123", "", "Олег!", "  Мария  ", "Ян"]
+
+def valid_names(names):
+
+    names = list(map(lambda name: name.strip().capitalize(), names))
+
+    names = list(filter(lambda name: name.isalpha() and len(name) >= 3, names))
+
+    return names
+
+
+result = valid_names(names)
+print(result)
